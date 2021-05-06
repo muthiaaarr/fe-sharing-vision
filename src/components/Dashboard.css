@@ -1,0 +1,20 @@
+@import url("https://unpkg.com/@coreui/coreui/dist/css/coreui.min.css");
+@import url(https://fonts.googleapis.com/css?family=Rajdhani);
+
+#dashboard {
+    font-family: Rajdhani;
+    font-size: larger;
+}
+
+#dashboard #header {
+    font-weight: bold;
+    font-size: x-large;
+}
+
+#dashboard #button-delete {
+    margin-right: 3%;
+}
+
+#dashboard #button-create {
+    margin-right: 3%;
+}

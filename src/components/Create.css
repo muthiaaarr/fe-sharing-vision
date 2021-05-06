@@ -1,0 +1,12 @@
+@import url("https://unpkg.com/@coreui/coreui/dist/css/coreui.min.css");
+@import url(https://fonts.googleapis.com/css?family=Rajdhani);
+
+#create {
+    font-family: Rajdhani;
+    font-size: larger;
+}
+
+#create #header {
+    font-size: x-large;
+    font-weight: bolder;
+}
