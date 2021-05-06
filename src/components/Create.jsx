@@ -54,6 +54,7 @@ export default function Create() {
         axios.post(url, data)
         .then(res => {
             if (res.status === 200) {
+                // FAILED KARENA ADA ISSUE CORS
                 console.log("Submit success")
             }
         })
