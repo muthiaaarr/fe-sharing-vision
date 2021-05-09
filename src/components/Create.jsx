@@ -75,6 +75,7 @@ export default function Create() {
                                             id='name' 
                                             placeholder="Enter your name" 
                                             onChange={(e) => setName(e.target.value)}
+                                            value={name}
                                             valid
                                             required
                                         />
@@ -84,6 +85,7 @@ export default function Create() {
                                                 id='name' 
                                                 placeholder="Enter your name" 
                                                 onChange={(e) => setName(e.target.value)}
+                                                value={name}
                                                 invalid
                                                 required
                                             />
@@ -98,6 +100,7 @@ export default function Create() {
                                             id='username' 
                                             placeholder="Enter your name" 
                                             onChange={(e) => setUsername(e.target.value)}
+                                            value={username}
                                             valid
                                             required
                                         />
@@ -107,6 +110,7 @@ export default function Create() {
                                                 id='username' 
                                                 placeholder="Enter your name" 
                                                 onChange={(e) => setUsername(e.target.value)}
+                                                value={username}
                                                 invalid
                                                 required
                                             />
@@ -119,8 +123,10 @@ export default function Create() {
                                     {passwordLength ? 
                                         <CInput 
                                             id='password' 
+                                            type='password'
                                             placeholder="Enter your name" 
                                             onChange={(e) => setPassword(e.target.value)}
+                                            value={password}
                                             valid
                                             required
                                         />
@@ -128,8 +134,10 @@ export default function Create() {
                                         <div>
                                             <CInput 
                                                 id='password' 
+                                                type='password'
                                                 placeholder="Enter your name" 
                                                 onChange={(e) => setPassword(e.target.value)}
+                                                value={password}
                                                 invalid
                                                 required
                                             />
