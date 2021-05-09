@@ -1,5 +1,6 @@
 import { CButton, CCard, CCardBody, CCardHeader, CCol, CContainer, CFormGroup, CFormText, CInput, CLabel, CRow } from "@coreui/react";
 import axios from "axios";
+import { useEffect } from "react";
 import { useState } from "react";
 import './Create.css'
 
@@ -40,11 +41,13 @@ export default function Create() {
         }
     }
 
-    const createNewUser = () => {
+    const validateAll = () => {
         validateName()
         validateUsername()
         validatePassword()
+    }
 
+    const createNewUser = () => {
         const url = 'https://sharingvision-backend.herokuapp.com/user'
         const data = {
             name: name,
@@ -59,6 +62,12 @@ export default function Create() {
             }
         })
     }
+
+    useEffect(() => {
+        if (nameLength === true && usernameLength === true && passwordLength === true) {
+            createNewUser()
+        }
+    })
 
     return(
         <div className="c-app c-default-layout flex-row align-items-center" id='create'>
@@ -153,7 +162,7 @@ export default function Create() {
                                             shape='square' 
                                             color='success' 
                                             id='button-submit'
-                                            onClick={() => createNewUser()}
+                                            onClick={() => validateAll()}
                                         >
                                             Submit
                                         </CButton>
