@@ -1,4 +1,4 @@
-import { CButton, CCard, CCardBody, CCardHeader, CCol, CContainer, CFormGroup, CFormText, CInput, CLabel, CRow } from "@coreui/react";
+import { CButton, CCard, CCardBody, CCardHeader, CCol, CContainer, CFormGroup, CFormText, CInput, CLabel, CModal, CModalBody, CModalFooter, CRow } from "@coreui/react";
 import axios from "axios";
 import { useEffect } from "react";
 import { useState } from "react";
@@ -9,6 +9,7 @@ export default function Create() {
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
     const [warning, setWarning] = useState("Required")
+    const [visible, isVisible] = useState(false)
 
     const [nameLength, isNameLength] = useState(false)
     const [usernameLength, isUsernameLength] = useState(false)
@@ -58,9 +59,16 @@ export default function Create() {
         .then(res => {
             if (res.status === 200) {
                 // FAILED KARENA ADA ISSUE CORS
-                console.log("Submit success")
+                // uncomment jika tidak ada issue cors
+                // isVisible(true)
             }
         })
+        // comment jika tidak ada issue cors
+        isVisible(true)
+    }
+
+    const successSubmit = () => {
+        window.location.assign("/")
     }
 
     useEffect(() => {
@@ -173,6 +181,14 @@ export default function Create() {
                     </CCol>
                 </CRow>
             </CContainer>
+            <CModal show={visible} onDismiss={() => isVisible(false)}>
+                <CModalBody>
+                    New user successfully created
+                </CModalBody>
+                <CModalFooter>
+                    <CButton color="primary" onClick={() => successSubmit()}>OK</CButton>
+                </CModalFooter>
+            </CModal>
         </div>
     )
 }
